@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>保留n位小数</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 145px;
+            border: 1px solid black;
+            margin: 100px auto;
+            padding-top: 20px;
+        }
+        .num , .p {
+            padding-bottom: 30px;
+            padding-left: 45px;
+        }
+        button {
+            width: 80px;
+            margin: 0px 150px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="num">
+        输入要转换的小数:<input type="text" id="shu"/>
+    </div>
+    <div class="p">
+        输入保留的位数&nbsp:<input type="text" id="ns"/>
+    </div>
+    <button>转换</button>
+</div>
+    <script>
+        (function (){
+            var floatNum = Number(document.getElementById("shu").value);
+            var placeNum = parseInt(document.getElementById("ns").value);
+            var btn = document.getElementsByTagName("button")[0];
+            function changePlaces(num,n){
+                btn.onclick = function(){
+                    console.log(num);
+                    console.log(n);
+                    alert(parseInt(num*Math.pow(10,n))/Math.pow(10,n));
+                }
+            }
+            changePlaces(floatNum,placeNum);
+        })();
+
+    </script>
+</div>
+</body>
+</html>
